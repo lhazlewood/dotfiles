@@ -11,7 +11,7 @@ fi
 [[ -r /usr/local/etc/profile.d/bash_completion.sh ]] && source /usr/local/etc/profile.d/bash_completion.sh
 
 # liquidprompt, only if interactive shell:
-[[ $- = *i* ]] && [[ -f "$HOME/.liquidprompt/liquidprompt" ]] && source "$HOME/.liquidprompt/liquidprompt"
+[[ $- = *i* ]] && [[ -f "/usr/local/share/liquidprompt" ]] && source "/usr/local/share/liquidprompt"
 
 # strap:straprc:begin
 [ -r "$HOME/.strap/etc/straprc" ] && . "$HOME/.strap/etc/straprc"
