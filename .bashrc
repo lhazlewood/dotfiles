@@ -1,7 +1,7 @@
 [ -r /etc/bashrc ] && . /etc/bashrc
 
 # ~/.bashrc.d support
-if [ -d "${HOME}/.bashrc.d" ]; then
+if ls -A "${HOME}"/.bashrc.d/*.sh >/dev/null 2>&1; then
   for file in "${HOME}"/.bashrc.d/*.sh; do
     source "${file}"
   done
