@@ -1,4 +1,4 @@
-[ -r /etc/bashrc ] && . /etc/bashrc
+if [ -r /etc/bashrc ]; then source /etc/bashrc; fi
 
 # ~/.bashrc.d support
 if ls -A "${HOME}"/.bashrc.d/*.sh >/dev/null 2>&1; then
@@ -8,12 +8,11 @@ if ls -A "${HOME}"/.bashrc.d/*.sh >/dev/null 2>&1; then
 fi
 
 # bash completion
-[[ -r /usr/local/etc/profile.d/bash_completion.sh ]] && source /usr/local/etc/profile.d/bash_completion.sh
+if [[ -r /usr/local/etc/profile.d/bash_completion.sh ]]; then source /usr/local/etc/profile.d/bash_completion.sh; fi
 
 # liquidprompt, only if interactive shell:
-[[ $- = *i* ]] && [[ -f "/usr/local/share/liquidprompt" ]] && source "/usr/local/share/liquidprompt"
+if [[ $- = *i* ]] && [[ -f "/usr/local/share/liquidprompt" ]]; then source "/usr/local/share/liquidprompt"; fi
 
 # strap:straprc:begin
-[ -r "$HOME/.strap/etc/straprc" ] && . "$HOME/.strap/etc/straprc"
+if [ -r "$HOME/.strap/etc/straprc" ]; then source "$HOME/.strap/etc/straprc"; fi
 # strap:straprc:end
-
